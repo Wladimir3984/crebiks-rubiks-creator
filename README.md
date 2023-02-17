@@ -21,4 +21,4 @@
   * docker-compose build
   * docker-compose up
   
-* 8- Ignorar este paso si usas docker debes instalar Python 3 o superior y instalar con pip install Django 4.1.4 y python-decuple, para levantar el servidor ejecutar camando "python manage.py runserver" en la raiz del proyecto desde consola de comandos.
+* 8- **Ignorar este paso si usas docker**. Debes instalar Python 3 o superior y instalar con pip install Django 4.1.4 y python-decuple, para levantar el servidor ejecutar camando "python manage.py runserver" en la raiz del proyecto desde consola de comandos.
