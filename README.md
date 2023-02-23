@@ -17,8 +17,8 @@
 
   ![image](https://user-images.githubusercontent.com/83993271/219709302-4d6fdadd-d783-44db-a539-e2ac7f9428c7.png)
 
-* 7- En la raiz del proyecto ejecutar estos comandos por consola(debes tener docker):
+* 7- **Ignorar si no usas docker**. En la raiz del proyecto ejecutar estos comandos por consola:
   * docker-compose build
   * docker-compose up
   
-* 8- **Ignorar este paso si usas docker**. Debes instalar Python 3 o superior y instalar con pip install Django 4.1.4 y python-decuple, para levantar el servidor ejecutar camando "python manage.py runserver" en la raiz del proyecto desde consola de comandos.
+* 8- **Ignorar este paso si usas docker**. Debes instalar Python 3 o superior y instalar con pip las dependencias del proyecto documentadas en el archivo requirements.txt, para levantar el servidor ejecutar camando "python manage.py runserver" en la raiz del proyecto desde consola de comandos.
