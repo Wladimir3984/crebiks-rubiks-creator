@@ -1,7 +1,15 @@
 # Crebiks, Crear modelos de cubos rubiks nunca fue tan facil :D
 *Modelado de cubos rubiks cuadrados y rectangulares*
 
-# ¿Como usar este proyecto?
+## Buscando la formula para descomponer un cubo rubik 
+**sin importar la orientación del cubo a la hora de designar alto x ancho x profundidad**
+
+![borrador formula](https://user-images.githubusercontent.com/83993271/221079805-198cbca4-af83-40e5-a8d5-6241385b6112.jpeg)
+*¿será correcta esta descomposición del cubo de rubik?*
+
+### La formula en codigo
+
+## ¿Como usar este proyecto?
 * 1- tener instalado docker(si no quieres usar docker debes omitir el paso 7)
 * 2- Clonar repo
 * 3- Situarse en la raiz del proyecto
