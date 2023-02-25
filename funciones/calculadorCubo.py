@@ -5,7 +5,6 @@ def calcularPiezas(lado_a, lado_b, lado_c):
    if lado_a==1 and lado_b==1 and lado_c==1: #1x1x1
         return {"cubo":cubo,
                "piezas":1, 
-               "cara":0, 
                "superior_mas_inferior":0, 
                "aristas_centrales":0, 
                "centro":0}
@@ -27,7 +26,6 @@ def calcularPiezas(lado_a, lado_b, lado_c):
    total = sup_inf + aristas_centrales+(centro)
    return {"cubo":cubo,
            "piezas":total, 
-           "cara":cara, 
            "superior_mas_inferior":sup_inf, 
            "aristas_centrales":aristas_centrales, 
            "centro":centro}
@@ -52,7 +50,6 @@ def dos_dimensiones_resultado(lado_a, lado_b, lado_c, cubo):
         sup_inf = cara*2
     return {"cubo":cubo,
             "piezas":sup_inf,
-            "cara":cara,
             "superior_mas_inferior":sup_inf,
             "aristas_centrales":0, 
             "centro":0}
