@@ -11,13 +11,13 @@ def calcularPiezas(lado_a, lado_b, lado_c):
                "centro":0}
    if tiene_dos_profundidad(lado_a, lado_b, lado_c):
        return dos_dimensiones_resultado(lado_a, lado_b, lado_c, cubo)
-
+   
    cara = cara_cuadrado(lado_a, lado_b)
    sup_inf = sup_inf_cuadrado(cara)
    aristas_centrales = aristas_centrales_cuadrado(cara,lado_a, lado_b)
    centro = (centro_cuadrado(cara,lado_a, lado_b))
 
-   if is_rectangular(lado_a, lado_b, lado_c):
+   if is_rectangular(lado_a, lado_b, lado_c): #si es rectangular se calcula los dos centros que son diferentes de las otras caras
      centro *= 2
      centro += (centro_rectangular(lado_b, lado_c))*2
 
