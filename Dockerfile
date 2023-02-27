@@ -7,7 +7,7 @@ RUN mkdir /code
 
 WORKDIR /code
 
-RUN apk update && apk add git bash
+RUN apk update && apk add git bash && pip install --upgrade pip
 
 ADD ./requirements.txt /code/
 
