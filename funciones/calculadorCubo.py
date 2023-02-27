@@ -1,13 +1,12 @@
-import numpy as np
-
 def calcularPiezas(lado_a, lado_b, lado_c):
    cubo = str(lado_a) + "x" + str(lado_b) + "x" + str(lado_c)
    if lado_a==1 and lado_b==1 and lado_c==1: #1x1x1
         return {"cubo":cubo,
                "piezas":1, 
-               "superior_mas_inferior":0, 
+               "front_plus_back":0, 
                "aristas_centrales":0, 
-               "centro":0}
+               "centro_left_plus_right":0,
+               "centro_up_plus_down":0}
    if tiene_dos_profundidad(lado_a, lado_b, lado_c):
        return dos_dimensiones_resultado(lado_a, lado_b, lado_c, cubo)
    
@@ -15,21 +14,22 @@ def calcularPiezas(lado_a, lado_b, lado_c):
    sup_inf = sup_inf_cuadrado(cara)
    aristas_centrales = aristas_centrales_cuadrado(cara,lado_a, lado_b)
    centro = (centro_cuadrado(cara,lado_a, lado_b))
+   centro_rect = 0
 
    if is_rectangular(lado_a, lado_b, lado_c): #si es rectangular se calcula los dos centros que son diferentes de las otras caras
      centro *= 2
-     centro += (centro_rectangular(lado_b, lado_c))*2
+     centro_rect = (centro_rectangular(lado_b, lado_c))*2
 
    else:
        centro *= 4
        
-   total = sup_inf + aristas_centrales+(centro)
+   total = sup_inf + aristas_centrales+(centro + centro_rect)
    return {"cubo":cubo,
            "piezas":total, 
-           "superior_mas_inferior":sup_inf, 
+           "front_plus_back":sup_inf, 
            "aristas_centrales":aristas_centrales, 
-           "centro":centro}
-
+           "centro_left_plus_right":centro,
+           "centro_up_plus_down":centro_rect}
 
 # si tiene dos profundidad
 def tiene_dos_profundidad(lado_a, lado_b, lado_c):
@@ -50,10 +50,11 @@ def dos_dimensiones_resultado(lado_a, lado_b, lado_c, cubo):
         sup_inf = cara*2
     return {"cubo":cubo,
             "piezas":sup_inf,
-            "superior_mas_inferior":sup_inf,
+            "front_plus_back":sup_inf,
             "aristas_centrales":0, 
-            "centro":0}
-    
+            "centro_left_plus_right":0,
+            "centro_up_plus_down":0}
+
 
     
 # calcular por partes el cubo solo si es de partes cuadradas

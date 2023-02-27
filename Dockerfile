@@ -8,6 +8,7 @@ RUN mkdir /code
 WORKDIR /code
 
 RUN apk update && apk add git bash && pip install --upgrade pip
+RUN apk --no-cache add musl-dev g++
 
 ADD ./requirements.txt /code/
 
