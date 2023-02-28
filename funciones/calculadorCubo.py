@@ -1,3 +1,9 @@
+def get_cube_details(lado_a, lado_b, lado_c):
+    #ordenar lados de mayor a menor
+    lados = [lado_a, lado_b, lado_c]
+    lados.sort(reverse=True)
+    return calcularPiezas(lados[0], lados[1], lados[2])
+
 def calcularPiezas(lado_a, lado_b, lado_c):
     cubo = str(lado_a) + "x" + str(lado_b) + "x" + str(lado_c)
     if lado_a == 1 and lado_b == 1 and lado_c == 1:  # 1x1x1
@@ -36,7 +42,7 @@ def calcularPiezas(lado_a, lado_b, lado_c):
 
 
 def tiene_dos_profundidad(lado_a, lado_b, lado_c):
-    if lado_a == 2 or lado_b == 2 or lado_c == 2:
+    if lado_a <= 2 or lado_b <= 2 or lado_c <= 2:
         return True
     return False
 
@@ -44,18 +50,22 @@ def tiene_dos_profundidad(lado_a, lado_b, lado_c):
 def dos_dimensiones_resultado(lado_a, lado_b, lado_c, cubo):
     cara = 0
     sup_inf = 0
-    if lado_a == 2:
+    band = 0
+    if lado_a == 2 or lado_a == 1:
         cara = lado_b*lado_c
-        sup_inf = cara*2
-    elif lado_b == 2:
+        sup_inf = cara*lado_a
+        band = lado_a
+    elif lado_b == 2 or lado_b == 1:
         cara = lado_a*lado_c
-        sup_inf = cara*2
-    elif lado_c == 2:
+        sup_inf = cara*lado_b
+        band = lado_b
+    elif lado_c == 2 or lado_c == 1:
         cara = lado_a*lado_b
-        sup_inf = cara*2
+        sup_inf = cara*lado_c
+        band = lado_c
     return {"cubo": cubo,
             "piezas": sup_inf,
-            "front_plus_back": sup_inf,
+            "front_plus_back": sup_inf if band == 2 else 0,
             "aristas_centrales": 0,
             "centro_left_plus_right": 0,
             "centro_up_plus_down": 0}
