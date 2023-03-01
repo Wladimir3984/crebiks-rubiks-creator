@@ -30,7 +30,7 @@ def test_calculadorCubo(alto, ancho, profundidad, esperado):
 @pytest.mark.parametrize(
     "alto, ancho, profundidad, esperado",
     [
-     # Esta funcion ordena los lados de mayor a menor por lo que se corrige el error de la funcion
+     # Esta funcion ordena los lados de mayor a menor por lo que se corrige el error de la funcion base(calcularPiezas)
      # al reordenar los lados, el cubo no se armara en la orientacion correcta dada por el usuario, pero si se calcula bien
      
      (3, 3, 7, {'cubo': '7x3x3', 'piezas': 58, 'front_plus_back': 42,
@@ -66,7 +66,10 @@ def test_calculadorCubo(alto, ancho, profundidad, esperado):
             'aristas_centrales': 0, 'centro_left_plus_right': 0, 'centro_up_plus_down': 0}),
      (5, 2, 1, {'cubo': '5x2x1', 'piezas': 10, 'front_plus_back': 10,
             'aristas_centrales': 0, 'centro_left_plus_right': 0, 'centro_up_plus_down': 0}),
-
+     #Manejo de errores
+     (0, 4, 3, False),
+     (5, 2, "hello", False),
+     (5, -5, 5, False),
 
     ]
 )
