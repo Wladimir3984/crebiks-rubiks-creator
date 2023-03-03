@@ -1,8 +1,16 @@
 def get_cube_details(lado_a, lado_b, lado_c):
-    #ordenar lados de mayor a menor
-    lados = [lado_a, lado_b, lado_c]
-    lados.sort(reverse=True)
-    return calcularPiezas(lados[0], lados[1], lados[2])
+    try:
+        if not (int==type(lado_a)==type(lado_b)==type(lado_c)):
+            return False # no es de tipo entero
+        if lado_a <= 0 or lado_b <= 0 or lado_c <= 0:
+            return False # no se aceptan numeros negativos o cero
+
+        #ordenar lados de mayor a menor
+        lados = [lado_a, lado_b, lado_c]
+        lados.sort(reverse=True)
+        return calcularPiezas(lados[0], lados[1], lados[2])
+    except: # testing si recive un string
+        return False
 
 def calcularPiezas(lado_a, lado_b, lado_c):
     cubo = str(lado_a) + "x" + str(lado_b) + "x" + str(lado_c)
