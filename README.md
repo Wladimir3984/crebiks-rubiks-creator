@@ -1,3 +1,5 @@
+[![Django CI](https://github.com/Wladimir3984/crebiks-rubiks-creator/actions/workflows/django.yml/badge.svg?branch=main)](https://github.com/Wladimir3984/crebiks-rubiks-creator/actions/workflows/django.yml)
+
 # Crebiks, Crear modelos de cubos rubiks nunca fue tan facil :D
 *Modelado de cubos rubiks cuadrados y rectangulares*
 
