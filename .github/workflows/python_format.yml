@@ -1,0 +1,24 @@
+name: Format python code
+on:
+  push:
+    branches: [ main ]
+jobs:
+  autopep8:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: autopep8
+        uses: peter-evans/autopep8@v2
+        with:
+          args: --recursive --in-place .
+      - name: Get last commit message
+        run: echo "LAST_COMMIT_MESSAGE=$(git log -1 --pretty=%B)" >> $GITHUB_ENV
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          commit-message: autopep8 action fixes
+          title: "Fixes by autopep8 action for ${{ env.LAST_COMMIT_MESSAGE }}"
+          body: This is an auto-generated PR with fixes by autopep8.
+          labels: autopep8, automated pr
+          reviewers: peter-evans
+          branch: autopep8-patches
