@@ -1,7 +1,7 @@
 [![Django CI](https://github.com/Wladimir3984/crebiks-rubiks-creator/actions/workflows/django.yml/badge.svg?branch=main)](https://github.com/Wladimir3984/crebiks-rubiks-creator/actions/workflows/django.yml)
 [![Format python code](https://github.com/Wladimir3984/crebiks-rubiks-creator/actions/workflows/python_format.yml/badge.svg?branch=main)](https://github.com/Wladimir3984/crebiks-rubiks-creator/actions/workflows/python_format.yml)
 
-# Crebiks, Crear modelos de cubos rubiks nunca fue tan facil :D
+# Crebiks, Crear modelos de cubos rubiks nunca fue tan facil y rapido :D
 *Modelado de cubos rubiks cuadrados y rectangulares*
 
 ## Buscando la formula para descomponer un cubo rubik 
