@@ -122,5 +122,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 if DEBUG:
     # SECURITY WARNING: keep the secret key used in production secret!
-    SECRET_KEY = config('SECRET_KEY', default='324324itIsOnlyForDevelopmentItsBetterDontUseTheDefaultaskd873264732') # default value is for development only
-
+    # default value is for development only
+    SECRET_KEY = config(
+        'SECRET_KEY', default='324324itIsOnlyForDevelopmentItsBetterDontUseTheDefaultaskd873264732')
