@@ -10,7 +10,7 @@ jobs:
       - name: autopep8
         uses: peter-evans/autopep8@v2
         with:
-          args: --recursive --in-place .
+          args: --recursive --in-place --aggressive.
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5
         with: 
