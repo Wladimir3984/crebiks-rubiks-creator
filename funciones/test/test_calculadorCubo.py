@@ -1,4 +1,4 @@
-from funciones.calculadorCubo import calcularPiezas, get_cube_details
+from funciones.calculadorCubo import calcularPiezas,    get_cube_details
 import pytest
 
 
